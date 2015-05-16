@@ -1,5 +1,5 @@
 {
-    "name": "machuga/authority",
+    "name": "stayallive/authority",
     "description": "A simple and flexible authorization system for PHP",
     "license": "mit",
     "authors": [
@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/events": "~5"
+        "illuminate/events": "~5.0"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*",
