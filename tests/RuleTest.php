@@ -63,11 +63,15 @@ class RuleTest extends PHPUnit_Framework_TestCase
         $object2 = new stdClass;
         $object2->id = 2;
 
-        $rule = new Rule(true, 'read', 'stdClass', function($obj) { return $obj->id == 1; });
+        $rule = new Rule(true, 'read', 'stdClass', function($obj) {
+            return $obj->id == 1;
+        });
         $this->assertTrue($rule->isAllowed($object1));
         $this->assertFalse($rule->isAllowed($object2));
 
-        $rule->when(function($obj) { return 1 == 2; });
+        $rule->when(function($obj) {
+            return 1 == 2;
+        });
 
         $this->assertFalse($rule->isAllowed($object1));
         $this->assertFalse($rule->isAllowed($object2));
@@ -87,12 +91,16 @@ class RuleTest extends PHPUnit_Framework_TestCase
         $this->assertFalse($rule->isAllowed($object1));
         $this->assertTrue($rule->isAllowed($object2));
 
-        $rule->when(function($obj) { return 1 == 2; });
+        $rule->when(function($obj) {
+            return 1 == 2;
+        });
 
         $this->assertFalse($rule->isAllowed($object1));
         $this->assertTrue($rule->isAllowed($object2));
 
-        $rule->when(function($obj) { return 1 == 1; });
+        $rule->when(function($obj) {
+            return 1 == 1;
+        });
 
         $this->assertFalse($rule->isAllowed($object1));
         $this->assertFalse($rule->isAllowed($object2));

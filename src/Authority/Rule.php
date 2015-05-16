@@ -89,7 +89,7 @@ class Rule
     public function matchesAction($action)
     {
         $action = (array) $action;
-        return in_array($this->action,$action);
+        return in_array($this->action, $action);
     }
 
     /**

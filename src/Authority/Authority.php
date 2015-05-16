@@ -26,7 +26,7 @@ class Authority
     /**
      * @var array List of aliases for groups of actions
      */
-    protected $aliases = array();
+    protected $aliases = [];
 
     /**
      * @var Dispatcher Dispatcher for events
@@ -57,7 +57,7 @@ class Authority
      * @param  mixed   $payload
      * @return mixed|null
      */
-    public function dispatch($eventName, $payload = array())
+    public function dispatch($eventName, $payload = [])
     {
         if ($this->dispatcher) {
             return $this->dispatcher->fire($eventName, $payload);
@@ -72,7 +72,7 @@ class Authority
     public function can($action, $resource, $resourceValue = null)
     {
         $self = $this;
-        if ( ! is_string($resource)) {
+        if (! is_string($resource)) {
             $resourceValue = $resource;
             $resource = get_class($resourceValue);
         }
@@ -91,6 +91,7 @@ class Authority
         } else {
             $allowed = false;
         }
+
         return $allowed;
     }
 
@@ -142,7 +143,7 @@ class Authority
      */
     public function addRule($allow, $actions, $resource, $condition = null)
     {
-        $rules = array();
+        $rules = [];
 
         $actions = (array) $actions;
 

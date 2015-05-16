@@ -29,7 +29,7 @@ class RuleRepository implements Countable, ArrayAccess, IteratorAggregate
      *
      * @param array $rules Initial list of rules for the collection
      */
-    public function __construct(array $rules = array())
+    public function __construct(array $rules = [])
     {
         $this->rules = $rules;
     }
@@ -51,7 +51,7 @@ class RuleRepository implements Countable, ArrayAccess, IteratorAggregate
      * @param mixed     $initialValue Initial value for the reduce set
      * @return RuleRepository
      */
-    public function reduce(Closure $callback, $initialValue = array())
+    public function reduce(Closure $callback, $initialValue = [])
     {
         $rules = array_reduce($this->rules, $callback, $initialValue);
         return new static($rules);
@@ -71,7 +71,7 @@ class RuleRepository implements Countable, ArrayAccess, IteratorAggregate
                 $rules[] = $currentRule;
             }
             return $rules;
-        }, array());
+        }, []);
 
         return new static($rules);
     }

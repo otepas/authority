@@ -13,15 +13,13 @@ class Dispatcher extends IlluminateDispatcher
      * @param  mixed   $payload
      * @return Authority\Event
      */
-    public function fire($eventName, $payload = array(), $halt = false)
+    public function fire($eventName, $payload = [], $halt = false)
     {
-        if (is_array($payload))
-        {
+        if (is_array($payload)) {
             $payload['timestamp'] = new DateTime;
             $payload = new Event($payload);
         }
 
-        return parent::fire($eventName, array($payload), $halt);
+        return parent::fire($eventName, [$payload], $halt);
     }
-
 }
