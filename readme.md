@@ -1,13 +1,8 @@
-# THIS REPO IS NOW DEPRECATED / EOL'ED
-It's been a fun few years, but I no longer use PHP in the capacity I find necessary to maintain Authority.  It's been this way for a bit, but I'll simply never get a chance to release Authority 3.  If someone else would like to take over this project ping me (@machuga) in an Issue.  Otherwise I highly recommend checking out beatswitch/lock or sentry/cartalyst as your alternative ACL library.
-
-Thanks for your support!
-
 # Authority
 
 A simple and flexible activity/resource based authorization system for PHP
 
-[![Build Status](https://travis-ci.org/machuga/authority.png?branch=develop)](https://travis-ci.org/machuga/authority)
+[![Build Status](https://travis-ci.org/authority-php/authority.png?branch=master)](https://travis-ci.org/authority-php/authority)
 
 
 ## Installation via Composer
@@ -16,8 +11,8 @@ Add Authority to your composer.json file to require Authority
 
 ```
 "require" : {
-    "machuga/authority" : "dev-master"
-} 
+    "authority-php/authority": "dev-master"
+}
 ```
 
 And install via composer
@@ -37,7 +32,7 @@ First we'll use standard role-based authorization checks for roles that may be a
 ```php
 if ($user->hasRole('admin') || $user->hasRole('moderator') || $user->hasRole('editor')) {
     // Can perform actions on resource
-    $post->delete();   
+    $post->delete();
 }
 ```
 While this certainly works, it is highly prone to needing changes, and could get quite large as roles increase.
@@ -52,7 +47,7 @@ if ($authority->can('edit', $post)) {
 ```
 
 Instead of littering the codebase with several conditionals about user roles, we only need
-to write out a conditional that reads like "if the current user can edit this post". 
+to write out a conditional that reads like "if the current user can edit this post".
 
 ## Default behavior
 
@@ -63,11 +58,11 @@ Two important default behaviors of Authority to keep in mind
 
 ## Basic usage
 
-Authority is intended to be instantiated once per application (though supports multiple instances).  It works well with an IoC (Inversion of Control) container that supports singleton access, like [Laravel's IoC](https://github.com/illuminate/container), or by using standard dependency injection.  You may assign rules prior to your app authorizing resources, or add at any time.  
+Authority is intended to be instantiated once per application (though supports multiple instances).  It works well with an IoC (Inversion of Control) container that supports singleton access, like [Laravel's IoC](https://github.com/illuminate/container), or by using standard dependency injection.  You may assign rules prior to your app authorizing resources, or add at any time.
 
 The Authority constructor requires at least one argument - the object that represents the current user.  We'll cover the second optional argument later.
 
-```php    
+```php
 <?php
 
 use Authority\Authority;
@@ -80,7 +75,7 @@ $authority = new Authority($currentUser);
     * Let's assign an alias to represent a group of actions
     * so that we don't have to handle each action individually each time
     */
-$authority->addAlias('manage', array('create', 'update', 'index', 'read', 'delete'));
+$authority->addAlias('manage', ['create', 'update', 'index', 'read', 'delete']);
 
 // Let's allow a User to see all other User resources
 $authority->allow('read', 'User');
@@ -102,7 +97,7 @@ $authority->allow('manage', 'User', function($self, $user) {
 
 // Now we can check to see if our rules are configured properly
 
-$otherUser = (object) array('id' => 2);
+$otherUser = (object) ['id' => 2];
 if ($authority->can('read', 'User')) {
     echo 'I can read about any user based on class!';
 }
@@ -125,7 +120,7 @@ If we run the above script, we will see:
     I can read about any user based on class!
     I can read about another user!
     I can delete my own user, so you see me :)
-    
+
 
 ## Intermediate Usage
 

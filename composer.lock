@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2a210d828a4fcfdce67fea38d230643e",
+    "hash": "190a8e304ad062197518bf8a4408e2ca",
     "packages": [
         {
             "name": "danielstjules/stringy",
@@ -131,16 +131,16 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v5.0.4",
+            "version": "v5.0.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "7ffdad0a2b2c600445deb57f5f7e93092e44ca2a"
+                "reference": "a11c01c1d8b6941bd7ef2f104749ada5e34f146e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/7ffdad0a2b2c600445deb57f5f7e93092e44ca2a",
-                "reference": "7ffdad0a2b2c600445deb57f5f7e93092e44ca2a",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/a11c01c1d8b6941bd7ef2f104749ada5e34f146e",
+                "reference": "a11c01c1d8b6941bd7ef2f104749ada5e34f146e",
                 "shasum": ""
             },
             "require": {
@@ -169,7 +169,8 @@
                 }
             ],
             "description": "The Illuminate Container package.",
-            "time": "2015-02-11 16:00:31"
+            "homepage": "http://laravel.com",
+            "time": "2015-03-25 17:06:14"
         },
         {
             "name": "illuminate/contracts",
@@ -214,16 +215,16 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v5.0.4",
+            "version": "v5.0.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
-                "reference": "ff8c302142a9f59dc1eeb5cc3e54a8e99d3e5785"
+                "reference": "bf2f28157a5acba4df20980e8511850a6572f1f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/events/zipball/ff8c302142a9f59dc1eeb5cc3e54a8e99d3e5785",
-                "reference": "ff8c302142a9f59dc1eeb5cc3e54a8e99d3e5785",
+                "url": "https://api.github.com/repos/illuminate/events/zipball/bf2f28157a5acba4df20980e8511850a6572f1f2",
+                "reference": "bf2f28157a5acba4df20980e8511850a6572f1f2",
                 "shasum": ""
             },
             "require": {
@@ -254,20 +255,21 @@
                 }
             ],
             "description": "The Illuminate Events package.",
-            "time": "2015-01-28 22:17:45"
+            "homepage": "http://laravel.com",
+            "time": "2015-03-26 16:16:33"
         },
         {
             "name": "illuminate/support",
-            "version": "v5.0.4",
+            "version": "v5.0.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "405a2241fefa49cfc39b7fba8cc54f69fce2f101"
+                "reference": "b6d68e1f2a7053bf4c755c5e6b15fcfb700e14e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/405a2241fefa49cfc39b7fba8cc54f69fce2f101",
-                "reference": "405a2241fefa49cfc39b7fba8cc54f69fce2f101",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/b6d68e1f2a7053bf4c755c5e6b15fcfb700e14e7",
+                "reference": "b6d68e1f2a7053bf4c755c5e6b15fcfb700e14e7",
                 "shasum": ""
             },
             "require": {
@@ -305,10 +307,69 @@
                 }
             ],
             "description": "The Illuminate Support package.",
-            "time": "2015-02-11 11:08:03"
+            "homepage": "http://laravel.com",
+            "time": "2015-04-15 19:26:55"
         }
     ],
     "packages-dev": [
+        {
+            "name": "jeremeamia/SuperClosure",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeremeamia/super_closure.git",
+                "reference": "b712f39c671e5ead60c7ebfe662545456aade833"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeremeamia/super_closure/zipball/b712f39c671e5ead60c7ebfe662545456aade833",
+                "reference": "b712f39c671e5ead60c7ebfe662545456aade833",
+                "shasum": ""
+            },
+            "require": {
+                "nikic/php-parser": "~1.0",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "~0.1.2",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SuperClosure\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeremy Lindblom",
+                    "email": "jeremeamia@gmail.com",
+                    "homepage": "https://github.com/jeremeamia",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Serialize Closure objects, including their context and binding",
+            "homepage": "https://github.com/jeremeamia/super_closure",
+            "keywords": [
+                "closure",
+                "function",
+                "lambda",
+                "parser",
+                "serializable",
+                "serialize",
+                "tokenizer"
+            ],
+            "time": "2015-03-11 20:06:43"
+        },
         {
             "name": "mockery/mockery",
             "version": "0.7.2",
@@ -361,6 +422,51 @@
                 "testing"
             ],
             "time": "2012-01-24 20:22:39"
+        },
+        {
+            "name": "nikic/php-parser",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikic/PHP-Parser.git",
+                "reference": "dff239267fd1befa1cd40430c9ed12591aa720ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/dff239267fd1befa1cd40430c9ed12591aa720ca",
+                "reference": "dff239267fd1befa1cd40430c9ed12591aa720ca",
+                "shasum": ""
+            },
+            "require": {
+                "ext-tokenizer": "*",
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "lib/bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Nikita Popov"
+                }
+            ],
+            "description": "A PHP parser written in PHP",
+            "keywords": [
+                "parser",
+                "php"
+            ],
+            "time": "2015-05-02 15:40:40"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -425,31 +531,33 @@
         },
         {
             "name": "phpunit/php-file-iterator",
-            "version": "1.3.4",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
-                "reference": "acd690379117b042d1c8af1fafd61bde001bf6bb"
+                "reference": "a923bb15680d0089e2316f7a4af8f437046e96bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/acd690379117b042d1c8af1fafd61bde001bf6bb",
-                "reference": "acd690379117b042d1c8af1fafd61bde001bf6bb",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/a923bb15680d0089e2316f7a4af8f437046e96bb",
+                "reference": "a923bb15680d0089e2316f7a4af8f437046e96bb",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
             "autoload": {
                 "classmap": [
-                    "File/"
+                    "src/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
-            "include-path": [
-                ""
-            ],
             "license": [
                 "BSD-3-Clause"
             ],
@@ -466,7 +574,7 @@
                 "filesystem",
                 "iterator"
             ],
-            "time": "2013-10-10 15:34:57"
+            "time": "2015-04-02 05:19:05"
         },
         {
             "name": "phpunit/php-text-template",
@@ -730,17 +838,17 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.6.5",
+            "version": "v2.6.7",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "0cd8e72071e46e15fc072270ae39ea1b66b10a9d"
+                "reference": "f157ab074e453ecd4c0fa775f721f6e67a99d9e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/0cd8e72071e46e15fc072270ae39ea1b66b10a9d",
-                "reference": "0cd8e72071e46e15fc072270ae39ea1b66b10a9d",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/f157ab074e453ecd4c0fa775f721f6e67a99d9e2",
+                "reference": "f157ab074e453ecd4c0fa775f721f6e67a99d9e2",
                 "shasum": ""
             },
             "require": {
@@ -766,17 +874,17 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony Yaml Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-03-12 10:28:44"
+            "homepage": "https://symfony.com",
+            "time": "2015-05-02 15:18:45"
         }
     ],
     "aliases": [],
