@@ -2,7 +2,7 @@
 
 A simple and flexible activity/resource based authorization system for PHP
 
-[![Build Status](https://travis-ci.org/machuga/authority.png?branch=develop)](https://travis-ci.org/machuga/authority)
+[![Build Status](https://travis-ci.org/authority-php/authority.png?branch=2.1)](https://travis-ci.org/authority-php/authority)
 
 
 ## Installation via Composer
@@ -11,8 +11,8 @@ Add Authority to your composer.json file to require Authority
 
 ```
 "require" : {
-    "machuga/authority" : "dev-master"
-} 
+    "authority-php/authority" : "2.1.x-dev"
+}
 ```
 
 And install via composer
@@ -32,7 +32,7 @@ First we'll use standard role-based authorization checks for roles that may be a
 ```php
 if ($user->hasRole('admin') || $user->hasRole('moderator') || $user->hasRole('editor')) {
     // Can perform actions on resource
-    $post->delete();   
+    $post->delete();
 }
 ```
 While this certainly works, it is highly prone to needing changes, and could get quite large as roles increase.
@@ -47,7 +47,7 @@ if ($authority->can('edit', $post)) {
 ```
 
 Instead of littering the codebase with several conditionals about user roles, we only need
-to write out a conditional that reads like "if the current user can edit this post". 
+to write out a conditional that reads like "if the current user can edit this post".
 
 ## Default behavior
 
@@ -62,7 +62,7 @@ Authority is intented to be instantiated once per application (though supports m
 
 The Authority constructor requires at least one argument - the object that represents the current user.  We'll cover the second optional argument later.
 
-```php    
+```php
 <?php
 
 use Authority\Authority;
@@ -120,7 +120,7 @@ If we run the above script, we will see:
     I can read about any user based on class!
     I can read about another user!
     I can delete my own user, so you see me :)
-    
+
 
 ## Intermediate Usage
 
