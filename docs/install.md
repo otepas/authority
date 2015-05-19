@@ -1,6 +1,6 @@
 # Install and Setup
 
-[Composer](http://www.getcomposer.org) is required to install Authority into your project. 
+[Composer](http://www.getcomposer.org) is required to install Authority into your project.
 
 **Quick Install Composer**
 
@@ -13,7 +13,7 @@ Open or create a ``composer.json`` file in your project directory and add an ent
 File: /myproject/composer.json
 {
     require : {
-        'machuga/authority' : 'dev-develop'
+        'authority-php/authority' : '2.1.x-dev'
     }
 }
 ```
